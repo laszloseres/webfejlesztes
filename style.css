@@ -1,0 +1,231 @@
+/* Globális stílusok */
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 160%;
+    color: #ffffff;
+    background-color: #1a1a1a;
+}
+
+/* A header stílusai */
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #222222;
+}
+
+header nav ul li a {
+    color: #ffd700;
+    padding: 20px;
+    display: block;
+}
+
+header nav ul li#current {
+    background-color: #555;
+    border-radius: 10px;
+}
+
+header nav ul li#current a {
+    color: #ffa500;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
+    border-radius: 75px;
+    transition: 1s;
+}
+
+/* Üdvözlő szekció */
+.oldalkezdo {
+    text-align: center;
+    padding: 60px;
+    background: linear-gradient(135deg, #ffd700, #c07505);
+    color: white;
+}
+
+.oldalkezdo h1 {
+    font-size: 42px;
+    text-shadow: 0 3px 3px rgb(14, 14, 14);
+}
+
+.oldalkezdo p {
+    font-size: 20px;
+    text-shadow: 0 2px 2px rgb(14, 14, 14);
+}
+
+/* Tartalom szekciók */
+section {
+    margin: 20px auto;
+    padding: 30px;
+    max-width: 800px;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgb(14, 14, 14);
+}
+
+section h2 {
+    font-family: 'Lora', serif;;
+    font-size: 30px;
+    color: #ffd700;
+    border-bottom: 2px solid #ffa500;
+    padding-bottom: 10px;
+    margin-bottom: 20px ;
+    text-shadow: 0 5px 5px rgb(14, 14, 14);
+}
+
+
+/* Listák */
+ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    color: #e6b800;
+}
+
+/* A szolgáltatások stíluselemei */
+.termekek, .csomagok {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.termek, .csomag {
+    border: 1px solid #e6b800;
+    border-radius: 10px;
+    padding: 10px;
+    width: 25%;
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.termek img, .csomag img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+}
+
+.termek h3, .csomag h3 {
+    margin-top: 10px;
+    color: #ffd700;
+}
+
+/* Űrlap táblázat */
+.urlap {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.urlap td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.urlap h4 {
+    font-size: 20px;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+/* Input mezők */
+.textbox {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.textbox:focus {
+    outline: none;
+    border-color: #ffa500;
+    transition: 0.5s;
+}
+
+
+/* Gombok */
+.gomb {
+    background-color: #ffd700;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.gomb:hover {
+    background-color: #ffa500;
+    color: #fff;
+    transition: 0.3s;
+}
+
+
+/* Slick */
+.slider {
+    width: 80%;
+    min-width: 400px;
+    margin: 100px auto;
+}
+
+.slick-slide {
+    margin: 0px 5px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: 0.3;
+}
+
+.slick-active {
+    opacity: 0.7;
+}
+
+.slick-current {
+    opacity: 1;
+}
+
+/* Reszponzív design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .oldalkezdo h1 {
+        font-size: 2em;
+    }
+
+    .oldalkezdo p {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 1em;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+}

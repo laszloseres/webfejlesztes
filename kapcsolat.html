@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FestAid - Bulikellék-kiadó vállalat.">
+    <meta name="author" content="Seres László">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="kepek/alap.png">
+    <title>FestAid - Bulikellék Kiadó</title>
+    <link href="style.css" rel="stylesheet">
+    <script>
+      function kodgeneralas(){
+        var kod = "";
+        /*Ha be van jelölve az adott checkbox, a valueját(termék kódját) belefűzi a rendelési kódba majd kiírja.*/
+        if(document.getElementById("fenyeffekt").checked){kod += document.getElementById("fenyeffekt").value;;}
+        if(document.getElementById("buborek").checked){kod += document.getElementById("buborek").value;;}
+        if(document.getElementById("diszkofeny").checked){kod += document.getElementById("diszkofeny").value;;}
+        if(document.getElementById("fustgep1").checked){kod += document.getElementById("fustgep1").value;;}
+        if(document.getElementById("fustgep2").checked){kod += document.getElementById("fustgep2").value;;}
+        if(document.getElementById("karszalag").checked){kod += document.getElementById("karszalag").value;;}
+        if(document.getElementById("lezer").checked){kod += document.getElementById("lezer").value;;}
+        if(document.getElementById("spider").checked){kod += document.getElementById("spider").value;;}
+        if(document.getElementById("spot").checked){kod += document.getElementById("spot").value;;}
+        if(document.getElementById("strobo").checked){kod += document.getElementById("strobo").value;;}
+        if(document.getElementById("uvfeny").checked){kod += document.getElementById("uvfeny").value;;}
+        if(document.getElementById("fenyvezerlo").checked){kod += document.getElementById("fenyvezerlo").value;;}
+        
+          
+      document.getElementById("rendeleskod").value=kod;
+      }
+      
+      function ellenoriz(){	
+      var usernev = document.getElementById("nev").value;
+     if (usernev==-"")
+     {
+     alert("Kérjük, adja meg a nevét és töltse ki az adatokat!");
+     return false;
+     }
+      return true;
+      }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="rolunk.html">Rólunk</a></li>
+                <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+                <li><a href="galeria.html">Galéria</a></li>
+                <li id = "current"><a href="kapcsolat.html">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class = "oldalkezdo">
+            <h1>Lépjen kapcsolatba velünk!</h1>
+        </div>
+                <section>
+                  <form onSubmit="return ellenoriz()" name="kapcsolatbalepes" action="http://szamtud.uni-corvinus.hu/~blang/receive.php" method="post">
+                    <table class="urlap">
+                      <tr>
+                        <td colspan="2"><h4>Az ön elérhetőségei:</h4>
+                          <label>Név:</label>
+                          <input class="textbox" type="text"  id="nev" name="nev">
+                          <br>
+                          <label>E-Mail:</label>
+                          <input class="textbox" type="text" name="email">
+                          <br>
+                          <label>Lakcím:</label>
+                          <input class="textbox" type="text" name="lakcim"></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <h4>Melyik termékeink után érdeklődik?</h4>
+                          <label>
+                            <input type="checkbox" name="fenyeffekt" id="fenyeffekt" value="F1">
+                            Fényeffekt bar</label>
+                          <br>
+                          <label>
+                            <input type="checkbox"  name="buborek" id="buborek" value="B">
+                            Buborékfújó</label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="diszkofeny" id="diszkofeny" value="D">
+                            Diszkó fény</label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="fustgep1" id="fustgep1" value="F2">
+                            Füstgép (BeamZ)</label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="fustgep2" id="fustgep2" value="F3">
+                            Füstgép (ADJ)</label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="karszalag" id="karszalag" value="K">
+                            Karszalagok</label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="lezer" id="lezer" value="L">
+                            Lézer</label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="spider" id="spider" value="S1">
+                            Spider robotlámpa</label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="spot" id="spot" value="S2">
+                            Spot lámpa</label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="strobo" id="strobo" value="S3">
+                            RGB Stroboszkóp</label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="uvfeny" id="uvfeny" value="U">
+                            UV Fényrúd</label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="fenyvezerlo" id="fenyvezerlo" value="F4">
+                            Fényvezérlő</label></td>
+                        <td>
+                          <h4>Az ön rendeléskódja:
+                            <input class="textbox" type="text" id="rendeleskod" name="rendeleskod">
+                          </h4>
+                          <p>
+                            <input class ="gomb" type="button" value="Rendeléskód megjelenítése" onClick="kodgeneralas()">
+                          </p></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><h4>
+                          Fogalmazzon egy kérvényt: <br>
+                          <textarea class = "textbox" name="kerveny" id="kerveny" rows="3"></textarea>
+                        </h4></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><input class="gomb" type="submit" value="Elküld">
+                          <input class="gomb" type="reset" value="Töröl"></td>
+                      </tr>
+                    </table>
+                  </form>
+                </section>
+    </main>
+    <footer>
+        <p>Seres László - Beadandó weboldal</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
